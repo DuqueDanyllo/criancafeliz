@@ -1,0 +1,326 @@
+/* ==========================================================================
+   VARIAVEIS DE DESIGN & ESTILOS BASE
+   ========================================================================== */
+:root {
+  --primary-emerald: #10b981;
+  --emerald-hover: #059669;
+  --emerald-light: #d1fae5;
+  --emerald-subtle: #ecfdf5;
+  --dark-main: #0f172a;
+  --dark-card: #1e293b;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-dark);
+  background-color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Espaçamentos padronizados */
+.py-6 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.bg-light-surface {
+  background-color: var(--bg-light);
+}
+
+.max-w-600 { max-width: 600px; }
+.max-w-400 { max-width: 400px; }
+.fw-extrabold { font-weight: 800; }
+
+/* Botões Customizados */
+.btn-emerald {
+  background-color: var(--primary-emerald);
+  color: #ffffff;
+  border: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-emerald:hover, 
+.btn-emerald:focus {
+  background-color: var(--emerald-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4) !important;
+}
+
+.btn-outline-emerald {
+  color: var(--primary-emerald);
+  border: 1.5px solid var(--primary-emerald);
+  background: transparent;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline-emerald:hover {
+  background-color: var(--primary-emerald);
+  color: #ffffff;
+}
+
+.bg-emerald-subtle {
+  background-color: var(--emerald-subtle);
+}
+
+.text-emerald {
+  color: var(--primary-emerald) !important;
+}
+
+/* Títulos & Seções */
+.section-tag {
+  color: var(--primary-emerald);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+.heading-line {
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-emerald);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+.navbar {
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: var(--transition-smooth);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-scrolled {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  background-color: var(--primary-emerald);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.brand-text { color: #ffffff; }
+.brand-accent { color: var(--primary-emerald); }
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: var(--primary-emerald);
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7)), 
+              url('imagens/Foto de Danyllo Duque.jpg') center/cover no-repeat fixed;
+  min-height: 90vh;
+  position: relative;
+  padding-top: 100px;
+}
+
+.badge-glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #a7f3d0, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   SOBRE
+   ========================================================================== */
+.img-frame {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.sobre-img {
+  height: 380px;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.img-frame:hover .sobre-img {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   PROJETOS / GALERIA & CARROSSEL
+   ========================================================================== */
+.custom-pills .nav-link {
+  color: var(--text-dark);
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: var(--transition-smooth);
+}
+
+.custom-pills .nav-link:hover {
+  border-color: var(--primary-emerald);
+  color: var(--primary-emerald);
+}
+
+.custom-pills .nav-link.active {
+  background-color: var(--primary-emerald);
+  color: #ffffff;
+  border-color: var(--primary-emerald);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.custom-carousel {
+  max-width: 850px;
+  background-color: #000000;
+  height: 500px;
+}
+
+.carousel-img {
+  height: 500px;
+  object-fit: contain;
+  background-color: #000000;
+}
+
+/* ==========================================================================
+   DOAÇÕES & CARDS
+   ========================================================================== */
+.card-doacao {
+  transition: var(--transition-smooth);
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+}
+
+.card-doacao:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08) !important;
+}
+
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-all {
+  user-select: all;
+  -webkit-user-select: all;
+}
+
+/* ==========================================================================
+   WHATSAPP & FOOTER
+   ========================================================================== */
+.whatsapp-float {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 28px;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  color: #ffffff;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.footer-dark {
+  background-color: var(--dark-main) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-link:hover {
+  color: var(--primary-emerald);
+}
+
+.back-to-top {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-emerald);
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section { min-height: 80vh; }
+  .custom-carousel, .carousel-img { height: 350px; }
+  .py-6 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+}
