@@ -70,3 +70,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+function trocarAno(anoSelecionado) {
+  // 1. Pausa todos os vídeos que estiverem tocando na página
+  const todosOsVideos = document.querySelectorAll('video');
+  todosOsVideos.forEach(video => {
+    video.pause();
+  });
+
+  // 2. Esconde todas as seções de anos
+  const todasAsSecoes = document.querySelectorAll('.secao-ano');
+  todasAsSecoes.forEach(secao => {
+    secao.classList.add('d-none');
+  });
+
+  // 3. Exibe apenas a seção do ano clicado
+  const secaoAlvo = document.getElementById(`acao-${anoSelecionado}`);
+  if (secaoAlvo) {
+    secaoAlvo.classList.remove('d-none');
+  }
+}
