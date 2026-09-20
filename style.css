@@ -153,7 +153,7 @@ body {
    ========================================================================== */
 .hero-section {
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7)), 
-              url('imagens/2025/img10.jpeg') center/cover no-repeat fixed;
+              url('imagens/2025/img5.jpeg') center/cover no-repeat fixed;
   min-height: 90vh;
   position: relative;
   padding-top: 100px;
@@ -162,7 +162,7 @@ body {
 .badge-glass {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(161, 148, 148, 0.2);
   color: #ffffff;
   padding: 8px 18px;
   border-radius: 30px;
@@ -324,4 +324,17 @@ body {
   .hero-section { min-height: 80vh; }
   .custom-carousel, .carousel-img { height: 350px; }
   .py-6 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+  opacity: 0.9;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efeito ao passar o mouse e link ativo */
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ffffff !important;
+  opacity: 1;
 }
